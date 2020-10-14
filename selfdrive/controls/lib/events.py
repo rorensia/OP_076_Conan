@@ -148,7 +148,7 @@ class ImmediateDisableAlert(Alert):
     super().__init__(alert_text_1, alert_text_2,
                      AlertStatus.critical, AlertSize.full,
                      Priority.HIGHEST, VisualAlert.steerRequired,
-                     AudibleAlert.chimeWarningRepeat, 2.2, 3., 4.),
+                     AudibleAlert.chimeWarningRepeat, 2.2, 2., 2.),
 
 class EngagementAlert(Alert):
   def __init__(self, audible_alert=True):
@@ -193,7 +193,7 @@ EVENTS = {
   EventName.startup: {
     ET.PERMANENT: Alert(
       "Be ready to take over at any time",
-      "Always keep hands on wheel and eyes on road",
+      "안전운전을 위해 항상 핸들을 잡고 도로교통 상황을 주시하세요",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOWER, VisualAlert.none, AudibleAlert.none, 0., 0., 5.),
   },
