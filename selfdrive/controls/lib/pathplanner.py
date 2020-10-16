@@ -310,7 +310,7 @@ class PathPlanner():
         lane_time = interp( v_ego_kph, xp, fp2 ) 
         self.lane_change_ll_prob = max(self.lane_change_ll_prob - lane_time*DT_MDL, 0.0)
         # 98% certainty 
-        if lane_change_prob < 0.02 and self.lane_change_ll_prob < 0.01:
+        if lane_change_prob < 0.03 and self.lane_change_ll_prob < 0.02:
           self.lane_change_state = LaneChangeState.laneChangeFinishing
 
       # finishing
@@ -399,19 +399,22 @@ class PathPlanner():
     elif v_ego_kph < 15:  # 30
     # 저속 와리가리 제어.  
       debug_status = 3
-      xp = [3,10,15]
+      xp = [5,10,15]
       fp2 = [3,5,7]
       limit_steers = interp( v_ego_kph, xp, fp2 )
       self.angle_steers_des_mpc = self.limit_ctrl( org_angle_steers_des, limit_steers, angle_steers )
-    elif v_ego_kph > 80: 
+    elif v_ego_kph > 85: 
       debug_status = 4
       pass
     elif abs(angle_steers) > 10: 
       debug_status = 5
     #최대 허용 조향각 제어 로직 1.  
-      xp = [-30,-20,-10,-5,0,5,10,20,30]    # 5=>약12도, 10=>28 15=>35, 30=>52
-      fp1 = [ 5, 7, 9,11,13,15,17,15,12]    # +
-      fp2 = [12,15,17,15,13,11, 9, 7, 5]    # -
+      xp = [-40,-30,-20,-10,-5,0,5,10,20,30,40]    # 5=>약12도, 10=>28 15=>35, 30=>52
+      fp1 = [ 3, 5, 7, 9,11,13,15,17,15,12,10]    # +
+      fp2 = [10,12,15,17,15,13,11, 9, 7, 5, 3]    # -
+      #xp = [-30,-20,-10,-5,0,5,10,20,30]    # 5=>약12도, 10=>28 15=>35, 30=>52
+      #fp1 = [ 5, 7, 9,11,13,15,17,15,12]    # +
+      #fp2 = [12,15,17,15,13,11, 9, 7, 5]    # -
       # fp1 = [3,8,10,15,20,25,28,22,15]    # +
       # fp2 = [15,22,28,25,20,15,10,8,3]    # -
       # xp = [-20,-10,-5,0,5,10,20]    # 5=>약12도, 10=>28, 15=>35, 20=>43, 30=>52
