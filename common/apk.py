@@ -35,6 +35,16 @@ def set_package_permissions():
   pm_grant("ai.comma.plus.offroad", "android.permission.READ_PHONE_STATE")
   pm_grant("ai.comma.plus.offroad", "android.permission.READ_EXTERNAL_STORAGE")
   appops_set("ai.comma.plus.offroad", "SU", "allow")
+  # try:
+  #   output = subprocess.check_output(['dumpsys', 'package', 'ai.comma.plus.offroad'], encoding="utf-8")
+  # except Exception:
+  #   given_permissions = ""
+
+  # wanted_permissions = ["ACCESS_FINE_LOCATION", "READ_PHONE_STATE", "READ_EXTERNAL_STORAGE"]
+  # for permission in wanted_permissions:
+  #   if permission not in given_permissions:
+  #     pm_grant("ai.comma.plus.offroad", "android.permission." + permission)
+
   appops_set("ai.comma.plus.offroad", "WIFI_SCAN", "allow")
 
 def appops_set(package, op, mode):
