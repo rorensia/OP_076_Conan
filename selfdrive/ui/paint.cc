@@ -744,7 +744,7 @@ static void ui_draw_debug(UIState *s)
   ui_print( s, x_pos, y_pos+200, "aDelay:%.2f", scene.pathPlan.steerActuatorDelay );
   ui_print( s, x_pos, y_pos+250, "stF:%.2f", scene.liveParams.stiffnessFactor );
 
-  nvgTextAlign(s->vg, NVG_ALIGN_CENTER | NVG_ALIGN_BASELINE);
+  // nvgTextAlign(s->vg, NVG_ALIGN_CENTER | NVG_ALIGN_BASELINE);
   nvgFillColor(s->vg, COLOR_YELLOW);   
   // ui_print(s, ui_viz_rx_center, y_pos+650, "곡률");
   // ui_print(s, ui_viz_rx_center, y_pos+700, "%.4f", scene.curvature);
