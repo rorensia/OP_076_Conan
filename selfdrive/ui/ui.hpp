@@ -91,6 +91,11 @@ const uint8_t bg_colors[][4] = {
   [STATUS_ALERT] = {0xC9, 0x22, 0x31, 0xff},
 };
 
+typedef struct Rect {
+  int x, y, w, h;
+  int centerX() const { return x + w / 2; }
+} Rect;
+
 
 typedef struct UIScene {
   int frontview;
