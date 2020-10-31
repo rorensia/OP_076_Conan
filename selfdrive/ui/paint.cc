@@ -745,7 +745,7 @@ static void ui_draw_debug(UIState *s)
   ui_print( s, x_pos, y_pos+250, "stF:%.2f", scene.liveParams.stiffnessFactor );
 
   nvgTextAlign(s->vg, NVG_ALIGN_CENTER | NVG_ALIGN_BASELINE);
-  nvgFillColor(s->vg, COLOR_YELLOW);  
+  nvgFillColor(s->vg, COLOR_YELLOW);   
   // ui_print(s, ui_viz_rx_center, y_pos+650, "곡률");
   // ui_print(s, ui_viz_rx_center, y_pos+700, "%.4f", scene.curvature);
   // ui_print(s, ui_viz_rx_center, y_pos+750, " 좌측인식률(%%)  좌폭(%%)  차선폭(m)  우폭(%%)  우측인식률");
