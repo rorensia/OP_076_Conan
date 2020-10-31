@@ -721,11 +721,10 @@ static void ui_draw_debug(UIState *s)
 
   int y_pos = 0;
   int x_pos = 0; 
-  int ui_viz_rx_center = ui_viz_rx.centerX();
+  // int ui_viz_rx_center = ui_viz_rx.centerX();
 
   nvgTextAlign(s->vg, NVG_ALIGN_LEFT | NVG_ALIGN_BASELINE);
   nvgFontSize(s->vg, 36*1.5*fFontSize);
-
 
   ui_print( s, ui_viz_rx+10, 50, "S:%d",  s->awake_timeout );
 
@@ -747,17 +746,17 @@ static void ui_draw_debug(UIState *s)
 
   nvgTextAlign(s->vg, NVG_ALIGN_CENTER | NVG_ALIGN_BASELINE);
   nvgFillColor(s->vg, COLOR_YELLOW);  
-  ui_print(s, ui_viz_rx_center, y_pos+650, "곡률");
-  ui_print(s, ui_viz_rx_center, y_pos+700, "%.4f", scene.curvature);
-  ui_print(s, ui_viz_rx_center, y_pos+750, " 좌측인식률(%%)  좌폭(%%)  차선폭(m)  우폭(%%)  우측인식률");
-  ui_print(s, ui_viz_rx_center, y_pos+800, "%5.1f         %4.1f           %4.2f           %4.1f        %5.1f",
-       (scene.pathPlan.lProb*100, scene.pathPlan.lPoly/(scene.pathPlan.lPoly+abs(scene.pathPlan.rPoly)))*100, 
-        scene.pathPlan.laneWidth, 
-       (abs(scene.pathPlan.rPoly)/(scene.pathPlan.lPoly+abs(scene.pathPlan.rPoly)))*100, scene.pathPlan.rProb*100); 
+  // ui_print(s, ui_viz_rx_center, y_pos+650, "곡률");
+  // ui_print(s, ui_viz_rx_center, y_pos+700, "%.4f", scene.curvature);
+  // ui_print(s, ui_viz_rx_center, y_pos+750, " 좌측인식률(%%)  좌폭(%%)  차선폭(m)  우폭(%%)  우측인식률");
+  // ui_print(s, ui_viz_rx_center, y_pos+800, "%5.1f         %4.1f           %4.2f           %4.1f        %5.1f",
+  //      (scene.pathPlan.lProb*100, scene.pathPlan.lPoly/(scene.pathPlan.lPoly+abs(scene.pathPlan.rPoly)))*100, 
+  //       scene.pathPlan.laneWidth, 
+  //      (abs(scene.pathPlan.rPoly)/(scene.pathPlan.lPoly+abs(scene.pathPlan.rPoly)))*100, scene.pathPlan.rProb*100); 
 
-  // ui_print( s, x_pos, y_pos+800, "LeftLane(%%) LeftPoly(%%)  LaneWidth  RightPoly(%%) RightLane(%%)");
-  // ui_print( s, x_pos, y_pos+850, "       %5.1f               %4.1f                  %4.2f                  %4.1f               %5.1f", 
-  // scene.pathPlan.lProb*100, (scene.pathPlan.lPoly/(scene.pathPlan.lPoly+abs(scene.pathPlan.rPoly)))*100, scene.pathPlan.laneWidth, (abs(scene.pathPlan.rPoly)/(scene.pathPlan.lPoly+abs(scene.pathPlan.rPoly)))*100, scene.pathPlan.rProb*100 ); 
+  ui_print( s, x_pos, y_pos+750, "LeftLane(%%) LeftPoly(%%)  LaneWidth  RightPoly(%%) RightLane(%%)");
+  ui_print( s, x_pos, y_pos+800, "       %5.1f               %4.1f                  %4.2f                  %4.1f               %5.1f", 
+  scene.pathPlan.lProb*100, (scene.pathPlan.lPoly/(scene.pathPlan.lPoly+abs(scene.pathPlan.rPoly)))*100, scene.pathPlan.laneWidth, (abs(scene.pathPlan.rPoly)/(scene.pathPlan.lPoly+abs(scene.pathPlan.rPoly)))*100, scene.pathPlan.rProb*100 ); 
 
   ui_print( s, 0, 1020, "%s", scene.alert.text1 );
   ui_print( s, 0, 1078, "%s", scene.alert.text2 );
