@@ -754,8 +754,8 @@ static void ui_draw_debug(UIState *s)
   //       scene.pathPlan.laneWidth,
   //      (abs(scene.pathPlan.rPoly)/(scene.pathPlan.lPoly+abs(scene.pathPlan.rPoly)))*100, scene.pathPlan.rProb*100); 
 
-  ui_print( s, x_pos+300, y_pos+750, "LeftLane(%%) LeftPoly(%%)  LaneWidth  RightPoly(%%) RightLane(%%)");
-  ui_print( s, x_pos+300, y_pos+800, "       %5.1f               %4.1f                  %4.2f                  %4.1f               %5.1f", 
+  ui_print( s, x_pos, y_pos+750, "LeftLane(%%) LeftPoly(%%)  LaneWidth  RightPoly(%%) RightLane(%%)");
+  ui_print( s, x_pos, y_pos+800, "       %5.1f               %4.1f                  %4.2f                  %4.1f               %5.1f", 
   scene.pathPlan.lProb*100, (scene.pathPlan.lPoly/(scene.pathPlan.lPoly+abs(scene.pathPlan.rPoly)))*100, scene.pathPlan.laneWidth, (abs(scene.pathPlan.rPoly)/(scene.pathPlan.lPoly+abs(scene.pathPlan.rPoly)))*100, scene.pathPlan.rProb*100 ); 
 
   ui_print( s, 0, 1020, "%s", scene.alert.text1 );
