@@ -92,7 +92,7 @@ class LanePlanner():
 
   def update_d_poly(self, v_ego , camera_offset ):
     # only offset left and right lane lines; offsetting p_poly does not make sense
-    camera_offset = ntune_get("cameraOffset")  #neokii
+    camera_offset = ntune_get('cameraOffset')  #neokii
     self.l_poly[3] += CAMERA_OFFSET + camera_offset
     self.r_poly[3] += CAMERA_OFFSET + camera_offset
 
