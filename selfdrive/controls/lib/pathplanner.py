@@ -87,10 +87,10 @@ class PathPlanner():
     self.prev_one_blinker = False
  
     # atom
-    self.trPATH = trace1.Loger("path")
-    self.trLearner = trace1.Loger("Learner")
-    self.trpathPlan = trace1.Loger("pathPlan")
-    self.trRapidCurv = trace1.Loger("076_conan_RapidCurv")   
+    # self.trPATH = trace1.Loger("path")
+    # self.trLearner = trace1.Loger("Learner")
+    # self.trpathPlan = trace1.Loger("pathPlan")
+    # self.trRapidCurv = trace1.Loger("076_conan_RapidCurv")   
 
     self.atom_timer_cnt = 0
     self.atom_steer_ratio = None
