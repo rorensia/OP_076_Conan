@@ -427,8 +427,8 @@ class PathPlanner():
       limit_steers2 = interp( model_sum, xp, fp2 )  # -
       self.angle_steers_des_mpc = self.limit_ctrl1( org_angle_steers_des, limit_steers1, limit_steers2, angle_steers )
       
-    str1 = '#/{} CVs/{} LS1/{} LS2/{} Ang/{} oDES/{} delta1/{} fDES/{} '.format(   
-              debug_status, model_sum, limit_steers1, limit_steers2, angle_steers, org_angle_steers_des, delta_steer, self.angle_steers_des_mpc)
+    # str1 = '#/{} CVs/{} LS1/{} LS2/{} Ang/{} oDES/{} delta1/{} fDES/{} '.format(   
+    #           debug_status, model_sum, limit_steers1, limit_steers2, angle_steers, org_angle_steers_des, delta_steer, self.angle_steers_des_mpc)
 
     #최대 허용 조향각 제어 로직 2.  
     delta_steer2 = self.angle_steers_des_mpc - angle_steers
@@ -439,9 +439,9 @@ class PathPlanner():
       m_angle_steers = angle_steers - DST_ANGLE_LIMIT
       self.angle_steers_des_mpc = m_angle_steers
 
-    str2 = 'delta2/{} fDES2/{}'.format(   
-            delta_steer2, self.angle_steers_des_mpc)
-    self.trRapidCurv.add( str1 + str2 )        
+    # str2 = 'delta2/{} fDES2/{}'.format(   
+    #         delta_steer2, self.angle_steers_des_mpc)
+    # self.trRapidCurv.add( str1 + str2 )        
 
     # 가변 sR rate_cost
     # self.atom_sr_boost_bp = [ 5.0, 10.0, 15.0, 20.0, 30.0, 50.0, 60.0, 100.0, 300.0]
